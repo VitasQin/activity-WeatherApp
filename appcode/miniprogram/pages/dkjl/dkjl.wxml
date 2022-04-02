@@ -1,0 +1,14 @@
+<!--pages/dkjl/dkjl.wxml-->
+<view class="ksj" wx:if="{{xzzz==''}}">
+  <image src="../../images/ksj.png"></image>
+</view>
+<view class="jqdk" wx:for="{{xzxx}}" wx:if="{{xzzz!=''}}">
+  <view class="jqdk_title">打卡记录</view>
+  <view class="jqdk_main">
+    <view class="jqdk_main_text1">座位: {{item.zwList[0].bh}}</view>
+    <view class="jqdk_main_text2" wx:if="{{item.qdzt!=0}}">打卡时间:  {{item.qdsj}}</view>
+    <view class="jqdk_main_text2" wx:if="{{item.qdzt==0}}">打卡时间:  暂未签到</view>
+    <view class="jqdk_main_text2" wx:if="{{item.qt!=0}}">签退时间:  {{item.qtsj}}</view>
+    <view class="jqdk_main_text2" wx:if="{{item.qt==0}}">签退时间:  暂未签到</view>
+  </view>
+</view>

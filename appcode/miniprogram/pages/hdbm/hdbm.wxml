@@ -1,0 +1,40 @@
+<!--pages/hdbm/hdbm.wxml-->
+<view class="fqzd-ban">
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">活动标题</view>
+          <view class="weui-form-preview__value_in-hd">{{rmb.name}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">地点</view>
+          <view class="weui-form-preview__value">{{rmb.dd}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">时间</view>
+          <view class="weui-form-preview__value">{{rmb._createTime}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">举办单位</view>
+          <view class="weui-form-preview__value">{{rmb.lxr}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">报名人数</view>
+          <view class="weui-form-preview__value">已报：{{bm}}总数：{{rmb.rs}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">简介</view>
+          <view class="weui-form-preview__value">{{rmb.jj}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__ft" wx:if="{{bm1==0}}">
+        <view id="{{rmb._id}}" bindtap="hdyy" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">一键报名</view>
+      </view>
+      <view class="weui-form-preview__ft" wx:if="{{bm1>0}}">
+        <view bindtap="qxyy" id="{{rmb._id}}" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">取消预约</view>
+        <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">已报名</navigator>
+      </view>
+    </view>
+</view>

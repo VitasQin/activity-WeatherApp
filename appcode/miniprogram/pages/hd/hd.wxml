@@ -1,0 +1,25 @@
+<!--pages/hd/hd.wxml-->
+<view class="banner">
+  <image src="../../images/5d044a1b5b7e4.jpg"></image>
+</view>
+<view class="news-bar">
+  <view class="newa-bar-title">
+    活动列表
+  </view>
+  <view class="news-bar-box" wx:for="{{rmb}}" wx:for-item="item" wx:key="_id" bindtap="sjowbs" id="{{item._id}}" wx:if="{{index<10}}">
+    <view class="news-box-img">
+      <image src="{{item.photo}}"></image>
+    </view>
+    <view class="news-box-text">
+      <view class="news-box-text-title">
+      {{item.name}}
+      </view>
+      <view class="news-bar-box-time">
+       报名人数：{{item.bmrs}}/人数：{{item.rs}}
+      </view>
+      <view class="news-bar-box-time">
+      {{item._createTime}} 
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/xgtx/xgtx.wxml-->
+<!--pages/fbxx/fbxx.wxml-->
+<mp-form-page title="用户头像修改" subtitle="请选择新的相片，然后提交！">
+<form catchsubmit="submitForm">
+       <mp-cell>
+        <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="1" title="相片上传" tips="最多可上传1张照片"></mp-uploader>
+      </mp-cell>
+ <view slot="button">
+      <button class="weui-btn" type="primary" form-type="submit">确定</button>
+</view>
+</form>
+   
+</mp-form-page>

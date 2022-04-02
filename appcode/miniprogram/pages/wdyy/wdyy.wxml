@@ -1,0 +1,45 @@
+<!--pages/wdyy/wdyy.wxml-->
+<view class="banner">
+  <image src="../../images/5d044a1b5b7e4.jpg"></image>
+</view>
+<view class="yyxx_box">
+  <view class="weui-form-preview" style="margin: 20rpx 0;" wx:for="{{xzxx}}">
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__label">活动名称</view>
+      <view class="weui-form-preview__value_in-hd">{{item.hd[0].name}}</view>
+    </view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">活动时间</view>
+        <view class="weui-form-preview__value">{{item.hd[0].hdtime}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">预约时间</view>
+        <view class="weui-form-preview__value">{{item._updateTime}}</view>
+      </view>
+      <view class="weui-form-preview__item" wx:if="{{item.qdzt==1}}">
+        <view class="weui-form-preview__label">签到时间</view>
+        <view class="weui-form-preview__value">{{item._updateTime}}</view>
+      </view>
+      <view class="weui-form-preview__item" wx:if="{{item.qdzt==0}}">
+        <view class="weui-form-preview__label">签到时间</view>
+        <view class="weui-form-preview__value">暂未签到</view>
+      </view>
+      
+      <view class="weui-form-preview__item" wx:if="{{item.qdzt==1}}">
+        <view class="weui-form-preview__label">签到状态</view>
+        <view class="weui-form-preview__value">该活动已经签到</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">联系</view>
+        <view class="weui-form-preview__value">{{item.hd[0].lxr}},电话：{{item.hd[0].dh}}</view>
+      </view>
+    </view>
+    <view class="weui-form-preview__ft">
+      <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="qd" id="{{item.hdname}}">签到</view>
+      <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="qxyy" id="{{item.hdname}}"  wx:if="{{item.qdzt==0}}">取消预约</view>
+      <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="" id="{{item.hdname}}"  wx:if="{{item.qdzt==1}}">不能取消预约</view>
+    </view>
+  </view>
+  
+</view>

@@ -1,0 +1,19 @@
+<!--pages/xgxx/xgxx.wxml-->
+<!--pages/grzl/grzl.wxml-->
+<view class="banner">
+  <image src="../../images/5d044a1b5b7e4.jpg"></image>
+</view>
+<form catchsubmit="formSubmit">
+  <view class="fqzd-ban">
+    <view class="row">
+        <view class="text1">姓名：</view>
+        <input class="weui-input" name="name" value="{{userInfo[0].username}}"/>
+    </view>
+    <view class="row">
+        <view class="text1">电话：</view>
+        <input class="weui-input" name="phone" type="number" value="{{userInfo[0].phone}}"/>
+    </view>
+    <button type="default" style="margin-top:20rpx;margin-bottom:60rpx" form-type="submit">报名</button>
+    <button type="default" style="margin-top:20rpx;margin-bottom:60rpx" form-type="reset">重置</button>
+</view>
+</form>
